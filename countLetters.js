@@ -1,9 +1,10 @@
 function countLetters(word) {
   var lets = {};
   var count = 0;
-  var letters = []
+  var letters = [];
   //word into array
-  letters = word.split("");
+
+  letters = word.split(" ").join("").split("");
   //count repeating letters
   for (var i = 0; i < letters.length; i++) {
     for (var x = 0; x < letters.length; x++) {
@@ -14,8 +15,6 @@ function countLetters(word) {
     }
     count = 0;
   }
-  //add letter and count to object
-
   //return
   return lets;
 }
