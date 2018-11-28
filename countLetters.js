@@ -1,26 +1,19 @@
-function countLetters(word) {
-  var lets = {};
-  var count = 0;
-  var letters = [];
-  //word into array
-
-  letters = word.split(" ").join("").split("");
-  //count repeating letters
-  for (var i = 0; i < letters.length; i++) {
-    for (var x = 0; x < letters.length; x++) {
-      if (letters[i] === letters[x]) {
-        count += 1;
-      }
-    lets[letters[i]] = count;
+function countLetters(x) {
+    var count = {};
+    var num = 0;
+    for (var i of x) {
+        for (var j of x) {
+            if (i == j) {
+                num++;
+            }
+        }
+        if (i != ' ') {
+            count[i] = num;
+        }
+        num = 0;
     }
-    count = 0;
-  }
-  //return
-  return lets;
+    console.log(count);
 }
 
-console.log(countLetters('lighthouse'));
-
-console.log(countLetters('lighthouse labs'));
-
-console.log(countLetters('downtown vancouver'));
+countLetters("abcdefgabc")
+countLetters('lighthouse in the house')
